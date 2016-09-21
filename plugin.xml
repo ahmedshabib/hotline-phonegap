@@ -41,7 +41,10 @@
             </feature>
         </config-file>
         
-        
+         <config-file target="AndroidManifest.xml" parent="/manifest">		
+            <uses-permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" />		
+           <permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" android:protectionLevel="signature" />		
+        </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <!-- GCM Listener Service -->
             <service
