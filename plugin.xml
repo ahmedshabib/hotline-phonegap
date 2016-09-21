@@ -41,10 +41,6 @@
             </feature>
         </config-file>
         
-        <config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" />
-            <permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-        </config-file>
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <!-- GCM Listener Service -->
@@ -55,19 +51,6 @@
                     <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 </intent-filter>
             </service>
- 
-            <!-- GCM Receiver -->
-            <receiver
-                android:name="com.google.android.gms.gcm.GcmReceiver"
-                android:exported="true"
-                android:permission="com.google.android.c2dm.permission.SEND">
-                    <intent-filter>
-                        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
- 
-                        <category android:name="$PACKAGE_NAME" />
-                    </intent-filter>
-            </receiver>
  
             <!-- InstanceIDListenerService -->
             <service
